@@ -5,7 +5,7 @@ principal = 500000.0
 rate = 0.05
 payment = 2684.11
 total_paid = 0.0
-months = 1
+months = 0
 
 ##Ex 1.8
 #def_payment = payment
@@ -21,7 +21,7 @@ mod_payment = payment + extra_payment
 
 
 while principal > 0:
-    if months >= 60 and months <= 108 :
+    if months >= extra_payment_start_month and months <= extra_payment_end_month :
         payment=mod_payment
 
     else :
@@ -32,5 +32,13 @@ while principal > 0:
     total_paid = total_paid + payment
     months = months + 1
     print ( months-1 , total_paid ,principal  )
+    diff = principal - payment
 
-print('Total paid', round(total_paid,2) ,'months' , months-1)
+    # if  diff < 0:
+    #     print('Alert!!!')
+    #     print ("pay Only: ", diff)
+    #     principal = principal -(payment- diff)
+    #     print (principal - diff)
+    #     total_paid = total_paid + diff
+
+print ('Total paid', round(total_paid+principal,2) ,'months' , months-1)
