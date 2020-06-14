@@ -31,7 +31,8 @@ while principal > 0:
     principal = principal * (1+rate/12) - payment
     total_paid = total_paid + payment
     months = months + 1
-    print ( months-1 , total_paid ,principal  )
+    #print ( months , total_paid ,principal  )
+    print (f'month {months} principal {principal:0.2f} Total Paid {total_paid:0.2f}')
     diff = principal - payment
 
     # if  diff < 0:
@@ -42,3 +43,5 @@ while principal > 0:
     #     total_paid = total_paid + diff
 
 print ('Total paid', round(total_paid+principal,2) ,'months' , months-1)
+
+f'Total Paid: {total_paid:0.2f} in months: {months-1}'
